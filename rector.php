@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Rector\Architecture\Rector\Class_\MoveRepositoryFromParentToConstructorRector;
 use Rector\Architecture\Rector\MethodCall\ReplaceParentRepositoryCallsByRepositoryPropertyRector;
 use Rector\Core\Configuration\Option;
 use Rector\Doctrine\Rector\Class_\RemoveRepositoryFromEntityAnnotationRector;
@@ -16,7 +15,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services->set(FinalizeClassesWithoutChildrenRector::class);
     $services->set(PropertyTypeDeclarationRector::class);
-    $services->set(MoveRepositoryFromParentToConstructorRector::class);
 
     $parameters = $containerConfigurator->parameters();
 
@@ -27,8 +25,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::SETS, [
         SetList::NAMING,
         SetList::CODE_QUALITY,
-        SetList::REPOSITORY_AS_SERVICE,
-        SetList::NETTE_CODE_QUALITY,
     ]);
 
 };
