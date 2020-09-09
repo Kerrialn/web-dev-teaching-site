@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 use Symplify\FlexLoader\Flex\FlexLoader;
 
-final class AppKernel extends Kernel
+final class WebDevSiteKernel extends Kernel
 {
     use MicroKernelTrait;
 
